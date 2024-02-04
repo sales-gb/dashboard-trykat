@@ -1,13 +1,22 @@
 import { Outlet } from 'react-router-dom'
 
-export function AppLayout() {
-  return (
-    <div>
-      <h1>Cabeçalho</h1>
+import { Header, NavBar } from '../../components'
+import { useLayoutStore } from '../../store'
+import * as S from './styles'
 
-      <div>
-        <Outlet />
-      </div>
-    </div>
+export function AppLayout() {
+  const { isOpen } = useLayoutStore()
+
+  return (
+    <S.Container>
+      <S.Main>
+        <Header />
+        <S.Content>
+          {isOpen ? <NavBar /> : ''}
+
+          <Outlet />
+        </S.Content>
+      </S.Main>
+    </S.Container>
   )
 }
