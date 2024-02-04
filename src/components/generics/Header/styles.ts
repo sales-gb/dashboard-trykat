@@ -43,3 +43,24 @@ export const NavHeader = styled.nav`
     }
   }
 `
+
+export const modalStyle = () => ({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  bgcolor: '#29292E',
+  boxShadow: 24,
+
+  button: {
+    fontSize: '1rem',
+    textTransform: 'capitalize',
+    fontWeight: '300',
+    color: '#fff',
+  },
+
+  '@media (min-width: 700px)': {
+    width: '200px',
+    marginLeft: 'auto',
+    marginTop: '60px',
+  },
+})

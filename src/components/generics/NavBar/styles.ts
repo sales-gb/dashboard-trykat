@@ -36,6 +36,7 @@ export const NavBarWrapper = styled.div<TNavBarWrapperProps>`
     justify-content: center;
 
     font-size: 1rem;
+    font-weight: 400;
     text-transform: capitalize;
     color: ${({ theme }) => theme.colors.white};
   }
