@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-import { Container, Form, TransactionsList } from '../../components'
+import { Container, Form, SearchForm, TransactionsList } from '../../components'
 import { useLayoutStore } from '../../store'
 import * as S from './styles'
 
@@ -15,7 +15,10 @@ export function Users() {
         <Form />
       </S.LeftBox>
 
-      <TransactionsList />
+      <S.RightBox>
+        <SearchForm />
+        <TransactionsList />
+      </S.RightBox>
     </Container>
   )
 }

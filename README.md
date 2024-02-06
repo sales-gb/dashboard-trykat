@@ -1,30 +1,64 @@
-# React + TypeScript + Vite
+<h1 align="center">
+  Trykat Dashboard - Front-end
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  Bem-vindo(a) ao Trykat Dashboard!
+  <br>
+   Uma plataforma para gerenciamento de transações. Com um menu lateral para navegação entre as páginas e um menu de admin estático, esta aplicação foi desenvolvida para simular uma aplicação completa. Com uma interface amigável e funcional, o Trykat Dashboard foi criado para facilitar o gerenciamento de transações e proporcionar uma experiência agradável aos seus usuários.
+</p>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o projeto Trykat Dashboard
 
-## Expanding the ESLint configuration
+O Front-end do Trykat Dashboard foi construído utilizando tecnologias como ReactJS, Styled-components e json-server para simular uma API backend dentre outras, proporcionando uma experiência de usuário responsiva e agradável em diferentes dispositivos.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Como executar localmente
 
-- Configure the top-level `parserOptions` property like this:
+<br>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+<blockquote> Para executar o Front-end localmente em sua máquina, você precisa ter o Node.js e o yarn (ou npm) instalados. Caso ainda não tenha, você pode baixá-los através do site oficial do Node.js: https://nodejs.org/ </blockquote>
+
+<br>
+
+Siga os passos abaixo para executar o Kenzie Contacts Front-end localmente:
+
+1. Clone o repositório:
+
+```bash
+CHAVE SSH: git clone git@github.com:sales-gb/dashboard-trykat.git
+HTTPS LInk: https://github.com/sales-gb/dashboard-trykat.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Acesse a pasta do projeto:
+
+```
+cd kenzie-contacts/front
+```
+
+3. Instale as dependências:
+
+```
+yarn add
+# or
+npm install
+```
+
+4. Inicie o servidor local:
+
+
+````
+yarn dev
+# or
+npm run dev
+````
+
+Após executar esses comandos, o Front-end do Kenzie Contacts estará rodando localmente em http://localhost:5173. No entanto, para obter todas as funcionalidades da aplicação, é necessário que executar o comando ``npm run dev:server`` ou ``yarn dev:server``. Só assim o servidor estará rodando localmente em sua máquina e poderá usufruir de toda experiência do projeto!
+
+<br>
+
+Lembre-se de que, como o projeto ainda não possui deploy completo em produção, a aplicação estará disponível apenas localmente.
+
+Se precisar de mais ajuda ou tiver alguma dúvida, estou à disposição!
+
+Feito com ♥ by sales-gb :wave:
