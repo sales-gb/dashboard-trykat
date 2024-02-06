@@ -2,6 +2,7 @@ import { Delete, Edit } from '@mui/icons-material'
 import { Box, Button, createTheme, Modal, ThemeProvider } from '@mui/material'
 import { green, red } from '@mui/material/colors'
 import { useContext, useState } from 'react'
+import { BeatLoader } from 'react-spinners'
 
 import { TransactionsContext } from '../../../context/TransactionContext'
 import { formatDate, maskCurrency } from '../../../utils'
@@ -45,7 +46,8 @@ interface ITransaction {
 }
 
 export function TransactionsList() {
-  const { transactions, deleteTransaction } = useContext(TransactionsContext)
+  const { transactions, deleteTransaction, isLoading } =
+    useContext(TransactionsContext)
   const [modalOpen, setModalOpen] = useState(false)
   const [transactionToDelete, setTransactionToDelete] = useState<number | null>(
     null,
@@ -72,73 +74,83 @@ export function TransactionsList() {
     <ThemeProvider theme={theme}>
       <S.TransactionsContainer>
         <h2>Transações</h2>
-        <S.TransactionsList>
-          {transactions.map((transaction) => (
-            <li key={transaction.id}>
-              <div className="leftBox">
-                <p>{transaction.category}</p>
-                <p>{maskCurrency(transaction.value)}</p>
-              </div>
-
-              <div className="rightBox">
-                <div className="buttonsBox">
-                  <Button
-                    className="actionButton"
-                    variant="contained"
-                    color="primary"
-                    endIcon={<Edit />}
-                    onClick={() => {
-                      setModalOpen(!modalOpen)
-                      setEdit(!isEdit)
-                      setTransactionToEdit(transaction)
-                    }}
-                  >
-                    Editar
-                  </Button>
-                  <Button
-                    type="button"
-                    className="actionButton"
-                    variant="contained"
-                    color="secondary"
-                    endIcon={<Delete />}
-                    onClick={() => {
-                      setModalOpen(!modalOpen)
-                      setTransactionToDelete(transaction.id)
-                    }}
-                  >
-                    Excluir
-                  </Button>
+        {isLoading ? (
+          <div className="loadingDiv">
+            <BeatLoader size={15} color="#00B37E" />
+          </div>
+        ) : transactions.length === 0 ? (
+          <div className="loadingDiv">
+            <BeatLoader size={15} color="#00B37E" />
+          </div>
+        ) : (
+          <S.TransactionsList>
+            {transactions.map((transaction) => (
+              <li key={transaction.id}>
+                <div className="leftBox">
+                  <p>{transaction.category}</p>
+                  <p>{maskCurrency(transaction.value)}</p>
                 </div>
-                <p>{formatDate(transaction.date)}</p>
-              </div>
 
-              <Modal open={modalOpen} onClose={handleCloseModal}>
-                <Box sx={style}>
-                  {isEdit ? (
-                    <Form
-                      transactionToEdit={transactionToEdit}
-                      handleCloseModal={handleCloseModal}
-                    />
-                  ) : (
-                    <>
-                      <h1>Você realmente deseja excluir essa transação?</h1>
-                      <Button
-                        type="button"
-                        className="actionButton"
-                        variant="contained"
-                        color="secondary"
-                        endIcon={<Delete />}
-                        onClick={handleDelete}
-                      >
-                        Excluir
-                      </Button>
-                    </>
-                  )}
-                </Box>
-              </Modal>
-            </li>
-          ))}
-        </S.TransactionsList>
+                <div className="rightBox">
+                  <div className="buttonsBox">
+                    <Button
+                      className="actionButton"
+                      variant="contained"
+                      color="primary"
+                      endIcon={<Edit />}
+                      onClick={() => {
+                        setModalOpen(!modalOpen)
+                        setEdit(!isEdit)
+                        setTransactionToEdit(transaction)
+                      }}
+                    >
+                      Editar
+                    </Button>
+                    <Button
+                      type="button"
+                      className="actionButton"
+                      variant="contained"
+                      color="secondary"
+                      endIcon={<Delete />}
+                      onClick={() => {
+                        setModalOpen(!modalOpen)
+                        setTransactionToDelete(transaction.id)
+                      }}
+                    >
+                      Excluir
+                    </Button>
+                  </div>
+                  <p>{formatDate(transaction.date)}</p>
+                </div>
+
+                <Modal open={modalOpen} onClose={handleCloseModal}>
+                  <Box sx={style}>
+                    {isEdit ? (
+                      <Form
+                        transactionToEdit={transactionToEdit}
+                        handleCloseModal={handleCloseModal}
+                      />
+                    ) : (
+                      <>
+                        <h1>Você realmente deseja excluir essa transação?</h1>
+                        <Button
+                          type="button"
+                          className="actionButton"
+                          variant="contained"
+                          color="secondary"
+                          endIcon={<Delete />}
+                          onClick={handleDelete}
+                        >
+                          Excluir
+                        </Button>
+                      </>
+                    )}
+                  </Box>
+                </Modal>
+              </li>
+            ))}
+          </S.TransactionsList>
+        )}
       </S.TransactionsContainer>
     </ThemeProvider>
   )

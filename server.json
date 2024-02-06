@@ -1,12 +1,6 @@
 {
   "transactions": [
     {
-      "id": "0a79",
-      "category": "teste",
-      "value": "216",
-      "date": "2024-02-02"
-    },
-    {
       "id": "cf84",
       "category": "editei mais um",
       "value": "62",
@@ -23,6 +17,12 @@
       "category": "editei mesmo",
       "value": "2616",
       "date": "2024-01-15"
+    },
+    {
+      "id": "6616",
+      "category": "compra de videogame",
+      "value": "56",
+      "date": "2024-02-01"
     }
   ]
 }

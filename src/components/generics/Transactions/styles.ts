@@ -10,6 +10,14 @@ export const TransactionsContainer = styled.div`
     font-size: 1.5rem;
     color: ${({ theme }) => theme.colors.gray7};
   }
+
+  .loadingDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+  }
 `
 
 export const TransactionsList = styled.ul`
