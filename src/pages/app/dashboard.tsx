@@ -2,7 +2,7 @@ import { green } from '@mui/material/colors'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Helmet } from 'react-helmet-async'
 
-import { Container } from '../../components'
+import { Container, Form, TransactionsList } from '../../components'
 import { useLayoutStore } from '../../store'
 
 const theme = createTheme({
@@ -23,7 +23,8 @@ export function Dashboard() {
       <Helmet title="dashboard" />
 
       <Container isOpen={isOpen}>
-        <h1>Dashboard</h1>
+        <Form />
+        <TransactionsList />
       </Container>
     </ThemeProvider>
   )

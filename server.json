@@ -1,0 +1,28 @@
+{
+  "transactions": [
+    {
+      "id": "0a79",
+      "category": "teste",
+      "value": "216",
+      "date": "2024-02-02"
+    },
+    {
+      "id": "cf84",
+      "category": "editei mais um",
+      "value": "62",
+      "date": "2024-01-23"
+    },
+    {
+      "id": "ad57",
+      "category": "xcluir 2",
+      "value": "2376",
+      "date": "2024-02-04"
+    },
+    {
+      "id": "e086",
+      "category": "editei mesmo",
+      "value": "2616",
+      "date": "2024-01-15"
+    }
+  ]
+}

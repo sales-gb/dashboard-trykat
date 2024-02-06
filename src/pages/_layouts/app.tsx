@@ -13,7 +13,6 @@ export function AppLayout() {
         <Header />
         <S.Content>
           {isOpen ? <NavBar /> : ''}
-
           <Outlet />
         </S.Content>
       </S.Main>
