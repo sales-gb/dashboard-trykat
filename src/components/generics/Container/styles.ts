@@ -7,6 +7,7 @@ export const Container = styled.div<{ sx?: CSSObject; isOpen: boolean }>`
   width: 100%;
   min-height: 100vh;
   padding: 20px 35px;
+  padding-top: 90px;
 
   background-color: ${({ theme }) => theme.colors.gray1};
 

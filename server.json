@@ -2,26 +2,32 @@
   "transactions": [
     {
       "id": "cf84",
-      "category": "editei mais um",
+      "category": "teste 1",
       "value": "62",
       "date": "2024-01-23"
     },
     {
       "id": "ad57",
-      "category": "xcluir 2",
+      "category": "teste 2",
       "value": "2376",
       "date": "2024-02-04"
     },
     {
       "id": "e086",
-      "category": "editei mesmo",
+      "category": "teste edição",
       "value": "2616",
       "date": "2024-01-15"
     },
     {
       "id": "6616",
-      "category": "compra de videogame",
+      "category": "pra excluir",
       "value": "56",
+      "date": "2024-02-01"
+    },
+    {
+      "id": "7308",
+      "category": "teste",
+      "value": "162",
       "date": "2024-02-01"
     }
   ]

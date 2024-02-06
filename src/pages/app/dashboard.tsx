@@ -1,31 +1,24 @@
-import { green } from '@mui/material/colors'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Helmet } from 'react-helmet-async'
 
-import { Container, Form, TransactionsList } from '../../components'
+import { Container, Form, SearchForm, TransactionsList } from '../../components'
 import { useLayoutStore } from '../../store'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      light: green[300],
-      main: green[500],
-      dark: green[700],
-    },
-  },
-})
+import * as S from './styles'
 
 export function Dashboard() {
   const { isOpen } = useLayoutStore()
 
   return (
-    <ThemeProvider theme={theme}>
+    <Container isOpen={isOpen}>
       <Helmet title="dashboard" />
-
-      <Container isOpen={isOpen}>
+      <S.LeftBox>
+        <h1>Dashboard</h1>
         <Form />
+      </S.LeftBox>
+
+      <S.RightBox>
+        <SearchForm />
         <TransactionsList />
-      </Container>
-    </ThemeProvider>
+      </S.RightBox>
+    </Container>
   )
 }
