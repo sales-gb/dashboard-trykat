@@ -8,17 +8,14 @@ export function Users() {
   const { isOpen } = useLayoutStore()
 
   return (
-    <>
+    <Container isOpen={isOpen}>
       <Helmet title="users" />
+      <S.LeftBox>
+        <h1>Usuários</h1>
+        <Form />
+      </S.LeftBox>
 
-      <Container isOpen={isOpen}>
-        <S.LeftBox>
-          <h1>Usuários</h1>
-          <Form />
-        </S.LeftBox>
-
-        <TransactionsList />
-      </Container>
-    </>
+      <TransactionsList />
+    </Container>
   )
 }

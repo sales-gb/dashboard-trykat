@@ -6,10 +6,6 @@ export const TransactionsContainer = styled.div`
   gap: 25px;
   width: 100%;
 
-  @media (min-width: 700px) {
-    padding-top: 70px;
-  }
-
   h2 {
     font-size: 1.5rem;
     color: ${({ theme }) => theme.colors.gray7};

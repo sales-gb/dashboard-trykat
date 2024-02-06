@@ -14,3 +14,14 @@ export const LeftBox = styled.div`
     color: ${({ theme }) => theme.colors.gray7};
   }
 `
+
+export const RightBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 700px) {
+    padding-top: 70px;
+  }
+`

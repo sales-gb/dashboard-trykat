@@ -32,6 +32,7 @@ interface IEditTransaction {
 interface ITransactionsContextType {
   transactions: ITransaction[]
   isLoading: boolean
+  setTransactions: React.Dispatch<React.SetStateAction<ITransaction[]>>
   fetchTransactions: (query?: string) => Promise<void>
   createTransaction: (data: ICreateTransaction) => Promise<void>
   updateTransaction: (data: IEditTransaction) => Promise<void>
@@ -53,9 +54,10 @@ export function TransactionsProvider({ children }: ITransactionContextProps) {
     try {
       setTimeout(async () => {
         const res = await api.get('/transactions')
+        console.log('Dados recebidos:', res.data)
         setTransactions(res.data)
+        setLoading(false)
       }, 2000)
-      setLoading(false)
     } catch (error) {
       console.error('Erro ao buscar transações:', error)
     }
@@ -135,6 +137,7 @@ export function TransactionsProvider({ children }: ITransactionContextProps) {
       value={{
         transactions,
         isLoading,
+        setTransactions,
         fetchTransactions,
         createTransaction,
         updateTransaction,
