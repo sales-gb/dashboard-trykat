@@ -64,7 +64,7 @@ export function Header() {
           open={modalOpen}
           onClose={() => setModalOpen(false)}
         >
-          <Box sx={{ ...style }}>
+          <Box sx={style}>
             <Button disabled variant="text">
               Nome de usuário
             </Button>

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const Header = styled.header`
+  position: fixed;
+  top: 0;
   display: flex;
   width: 100%;
   height: 69px;
@@ -45,20 +47,23 @@ export const NavHeader = styled.nav`
 `
 
 export const modalStyle = () => ({
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  // bgcolor: 'background.paper',
-  border: '2px solid #000',
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  bgcolor: '#29292E',
   boxShadow: 24,
-  p: 4,
 
   button: {
     fontSize: '1rem',
     textTransform: 'capitalize',
     fontWeight: '300',
     color: '#fff',
+  },
+
+  '@media (min-width: 700px)': {
+    width: '200px',
+    marginLeft: 'auto',
+    marginTop: '60px',
+    marginRight: '20px',
   },
 })

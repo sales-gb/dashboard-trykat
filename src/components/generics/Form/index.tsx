@@ -33,7 +33,7 @@ const newTransactionSchema = z.object({
     },
     {
       message:
-        'A data deve ser maior ou igual a 01/01/2024 e menor ou igual à data atual',
+        'A data deve ser maior ou igual a 01/01/2024 e menor ou igual à data de hoje',
     },
   ),
   category: z.string().min(1, 'A categoria é obrigatória'),

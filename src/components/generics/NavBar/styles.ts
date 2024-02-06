@@ -8,6 +8,7 @@ export const NavBarWrapper = styled.div<TNavBarWrapperProps>`
   height: 100vh;
   background: ${({ theme }) => theme.colors.gray3};
   overflow: auto;
+  padding-top: 80px;
 
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
